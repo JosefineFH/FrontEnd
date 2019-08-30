@@ -50,7 +50,9 @@ a{
 .main-header p {
     font-size: 2rm;
 }
-
+.card h3 span {
+    color: #b50d10;
+}
 .card {
     display: grid;
     grid-template-columns: 1fr 1fr;
