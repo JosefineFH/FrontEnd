@@ -1,4 +1,4 @@
-# real-world-vue
+# EventApp
 
 ## Following along?
 
