@@ -1,6 +1,5 @@
 # EventApp
 
-## Following along?
 
 # Vue
 
