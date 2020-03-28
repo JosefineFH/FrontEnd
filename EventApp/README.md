@@ -4,16 +4,24 @@
 
 # Vue
 
-## Project setup
+## Project setup + Json Server
 
 ```
 npm install
 ```
+```
+npm install -g json-server
+```
 
-### Compiles and hot-reloads for development
+### Compiles and hot-reloads for development + Start Json server
 
 ```
 npm run serve
+```
+
+```
+json-server --watch db.json
+
 ```
 
 ### Compiles and minifies for production
@@ -26,19 +34,4 @@ npm run build
 
 ```
 npm run lint
-```
-
-# Json Server
-
-### Project setup
-
-```
-npm install -g json-server
-```
-
-### Start Json server
-
-```
-json-server --watch db.json
-
 ```
