@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
-import store from './store'
+import store from './store/store'
 
 const requireComponent = require.context(
   './components',
