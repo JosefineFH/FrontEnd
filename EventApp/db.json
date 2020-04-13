@@ -232,6 +232,23 @@
       "time": "5:00",
       "attendees": []
     },
-   
+    {
+      "id": 826,
+      "user": {
+        "id": "abc123",
+        "name": "Josefine"
+      },
+      "category": "",
+      "organizer": {
+        "id": "abc123",
+        "name": "Josefine"
+      },
+      "title": "SUCCES",
+      "description": "",
+      "location": "",
+      "date": "",
+      "time": "",
+      "attendees": []
+    }
   ]
 }
