@@ -22,8 +22,8 @@ export default {
   data() {
     return {
       errors: [],
-      name: "",
-      password: ""
+      name: "abc",
+      password: "abc123"
     };
   },
 
