@@ -3,7 +3,8 @@ import Router from 'vue-router'
 import Main from '@/views/main.vue'
 import Books from '@/views/yourbooks.vue'
 import Login from '@/views/login.vue'
-import AddBook from '@/views/AddBook'
+import BookList from '@/views/BookList'
+import BookInfo from '@/views/BookInfo.vue'
 
 Vue.use(Router)
 
@@ -25,9 +26,15 @@ export default new Router({
       component: Books,
     },
     {
-      path: "/add",
-      name: "AddBook",
-      component: AddBook,
+      path: "/booklist",
+      name: "BookList",
+      component: BookList,
+    },
+    {
+      path: "/bookinfo",
+      name: "BookInfo",
+      component: BookInfo,
+      props: true,
     },
   ],
 });
