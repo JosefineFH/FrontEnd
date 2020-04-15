@@ -1,28 +1,36 @@
 <template>
   <div id="app">
-    <navbar/>
+    <main class="container">
+    <navbar />
     <div class="body">
-      <router-view/>
+      <router-view />
     </div>
-    
+    </main>
   </div>
 </template>
 
 <script>
-import navbar from './components/navbar'
+import navbar from "./components/navbar";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     navbar
   }
-}
+};
 </script>
 
 <style>
 * {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 .body {
-  margin: 20px;
+  font-size: 1.3rem;
+}
+.container{
+    margin: auto;
+    overflow: auto;
+    padding: 0 2rm;
 }
 </style>
