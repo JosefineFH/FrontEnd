@@ -1,11 +1,18 @@
 <template>
   <div>
     <p>Welcome</p>
+    <button @click="search()">search for book</button>
   </div>
 </template>
 
 <script>
-
+export default {
+  methods: {
+    search(){
+      this.$router.push({name: "BookList"});
+    }
+  }
+}
 </script>
 <style scoped>
 input {
