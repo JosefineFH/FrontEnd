@@ -2,10 +2,10 @@
   <div>
     <form @submit.prevent="login">
       <label for="email">Username:</label>
-      <input type="email" v-model="email" name="email" />
+      <input type="email" v-model="login.email" name="email" />
 
       <label for="password">Password:</label>
-      <input type="password" v-model="password" />
+      <input type="password" v-model="login.password" />
 
       <input class="button" type="submit" value="Login" />
 
@@ -22,55 +22,31 @@ import axios from "axios";
 export default {
   data() {
     return {
-      errors: [],
       email: "abc@test.com",
-      password: "abc123"
+      password: "abc123",
+      errors: []
     };
   },
 
   methods: {
-    login: function(e) {
+    login(e) {
       const loginValues = {
         email: this.email,
         password: this.password
       };
-
-      axios.post("http://localhost:3000/register", loginValues, {
-        withCredentials: true
-      });
-       .then(() => {
-          // this.$router.push({ name: "LoginUser" });
-          console.log(response);
+      axios
+        .get("http://localhost:3000/register", loginValues)
+        .then(response => {
+          this.data = response.data
+          this.data.forEach((user) => {
+            if (user.email === this.email && user.password === this.password) {
+            console.log(user.name)
+          }
+          })
         })
         .catch(function(e) {
           console.log(e);
         });
-
-
-      // if (this.name && this.password) {
-      //   axios
-      // .post("http://localhost:3000/users")
-      // .then(response => {
-      //   console.log(response)
-      // })
-      // .catch(function(error) {
-      //   console.log(error);
-      // });
-
-      this.$router.push({ name: "Bookshelf" });
-      //   // return true;
-      // }
-
-      // this.errors = [];
-
-      // if (!this.name) {
-      //   this.errors.push("Name required.");
-      // }
-      // if (!this.password) {
-      //   this.errors.push("password required.");
-      // }
-
-      // e.preventDefault();
     }
   }
 };
