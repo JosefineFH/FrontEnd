@@ -9,7 +9,7 @@
 export default {
   methods: {
     search(){
-      this.$router.push({name: "BookList"});
+      this.$router.push({name: "BookSearch"});
     }
   }
 }
