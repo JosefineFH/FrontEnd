@@ -1,9 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Main from '@/views/main.vue'
-import Books from '@/views/main.vue'
-import Login from '@/views/login.vue'
-import BookList from '@/views/BookList'
+import Bookshelf from "@/views/Bookshelf.vue";
+import LoginUser from "@/views/LoginUser.vue";
+import BookSearch from "@/views/BookSearch";
 import BookInfo from '@/views/BookInfo.vue'
 
 Vue.use(Router)
@@ -12,29 +11,24 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "Main",
-      component: Main,
+      name: "LoginUser",
+      component: LoginUser
     },
     {
-      path: "/login",
-      name: "Login",
-      component: Login,
+      path: "/bookshelf",
+      name: "Bookshelf",
+      component: Bookshelf
     },
     {
-      path: "/books",
-      name: "Books",
-      component: Books,
-    },
-    {
-      path: "/booklist",
-      name: "BookList",
-      component: BookList,
+      path: "/booksearch",
+      name: "BookSearch",
+      component: BookSearch
     },
     {
       path: "/bookinfo",
       name: "BookInfo",
       component: BookInfo,
-      props: true,
-    },
-  ],
+      props: true
+    }
+  ]
 });
