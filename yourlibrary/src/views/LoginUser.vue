@@ -1,13 +1,13 @@
 <template>
   <div>
     <form @submit.prevent="login">
-      <label for="email"> Username: </label>
+      <label for="email">Username:</label>
       <input type="email" v-model="email" name="email" />
 
-      <label for="password"> Password: </label>
+      <label for="password">Password:</label>
       <input type="password" v-model="password" />
 
-      <input class="button" type="submit" value="Submit" />
+      <input class="button" type="submit" value="Login" />
 
       <div v-if="errors.length">
         <p v-for="error in errors" :key="error">{{error}}</p>
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 
 export default {
   data() {
@@ -30,8 +30,23 @@ export default {
 
   methods: {
     login: function(e) {
-      console.log(this.email)
-      console.log(this.password)
+      const loginValues = {
+        email: this.email,
+        password: this.password
+      };
+
+      axios.post("http://localhost:3000/register", loginValues, {
+        withCredentials: true
+      });
+       .then(() => {
+          // this.$router.push({ name: "LoginUser" });
+          console.log(response);
+        })
+        .catch(function(e) {
+          console.log(e);
+        });
+
+
       // if (this.name && this.password) {
       //   axios
       // .post("http://localhost:3000/users")
@@ -42,7 +57,7 @@ export default {
       //   console.log(error);
       // });
 
-      //   // this.$router.push({ name: "Bookshelf" });
+      this.$router.push({ name: "Bookshelf" });
       //   // return true;
       // }
 
