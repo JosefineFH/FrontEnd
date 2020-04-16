@@ -27,7 +27,7 @@ export default {
   },
   data() {
     return {
-      searchTerm: "sarah j maas",
+      searchTerm: "",
       searchResult: [],
       totalItems: "",
       showTotalItems: false
@@ -43,8 +43,8 @@ export default {
           this.totalItems = response.data.totalItems;
           // console.log(this.searchResult);
 
-          if(this.totalItems !== '' ){
-            this.showTotalItems = true
+          if (this.totalItems !== "") {
+            this.showTotalItems = true;
           }
         })
         .catch(function(error) {
