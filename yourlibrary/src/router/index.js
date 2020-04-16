@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Bookshelf from "@/views/Bookshelf.vue";
 import LoginUser from "@/views/LoginUser.vue";
+import RegisterUser from "@/views/RegisterUser.vue"
+import Bookshelf from "@/views/Bookshelf.vue";
 import BookSearch from "@/views/BookSearch";
 import BookInfo from '@/views/BookInfo.vue'
 
@@ -15,9 +16,17 @@ export default new Router({
       component: LoginUser
     },
     {
+      path: "/registerUser",
+      name: "RegisterUser",
+      component: RegisterUser
+    },
+    {
       path: "/bookshelf",
       name: "Bookshelf",
-      component: Bookshelf
+      component: Bookshelf,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: "/booksearch",
