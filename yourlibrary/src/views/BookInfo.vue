@@ -1,5 +1,6 @@
 <template>
   <div>
+    <router-link to="booksearch">back</router-link>
     <p>Book Info</p>
 
     <p>{{book.title}}</p>
@@ -12,9 +13,7 @@ export default {
   props: ["id"],
   data() {
     return {
-      book: {},
-      identifierOne: '',
-      identifierTwo: ''
+      book: {}
     };
   },
 
