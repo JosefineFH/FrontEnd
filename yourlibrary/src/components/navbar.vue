@@ -2,6 +2,7 @@
   <div class="navbar">
     <h1>Test</h1>
     <router-link v-if="ifLogedIn" to="/">Login</router-link>
+        <router-link v-if="ifLogedIn" to="/RegisterUser">Register</router-link>
     <router-link v-if="!ifLogedIn" to="/">Logout</router-link>
 
     <router-link v-if="ifLogedIn" to="Bookshelf">Books</router-link>
