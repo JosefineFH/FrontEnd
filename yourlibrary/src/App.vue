@@ -23,14 +23,8 @@ export default {
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+
 }
-.body {
-  font-size: 1.3rem;
-}
-.container{
-    margin: auto;
-    overflow: auto;
-    padding: 0 2rm;
-}
+
+
 </style>
