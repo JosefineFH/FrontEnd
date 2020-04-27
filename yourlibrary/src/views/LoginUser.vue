@@ -1,18 +1,16 @@
 <template>
   <div>
     <form @submit.prevent="login">
-      <label for="email">Username:</label>
-      <input type="email" v-model="login.email" name="email" />
+      <label>Email:</label>
+      <input type="email" v-model="loginInfo.email" name="email" />
 
-      <label for="password">Password:</label>
-      <input type="password" v-model="login.password" />
+      <label>Password:</label>
+      <input type="password" v-model="loginInfo.password" />
 
       <input class="button" type="submit" value="Login" />
-
-      <div v-if="errors.length">
-        <p v-for="error in errors" :key="error">{{error}}</p>
-      </div>
     </form>
+
+    <a>{{ errors }}</a>
   </div>
 </template>
 
@@ -22,27 +20,28 @@ import axios from "axios";
 export default {
   data() {
     return {
-      email: "abc@test.com",
-      password: "abc123",
-      errors: []
+      loginInfo: {
+        email: "",
+        password: ""
+      },
+
+      errors: ""
     };
   },
 
   methods: {
-    login(e) {
+    login() {
       const loginValues = {
-        email: this.email,
-        password: this.password
+        email: this.loginInfo.email,
+        password: this.loginInfo.password
       };
+
       axios
-        .get("http://localhost:3000/register", loginValues)
+        .get("http://localhost:3000/users ", loginValues, {
+          withCredentials: true
+        })
         .then(response => {
-          this.data = response.data
-          this.data.forEach((user) => {
-            if (user.email === this.email && user.password === this.password) {
-            console.log(user.name)
-          }
-          })
+          console.log(response);
         })
         .catch(function(e) {
           console.log(e);
@@ -73,3 +72,33 @@ form {
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 </style>
+
+
+
+ <!-- login(e) {
+      const loginValues = {
+        email: this.email,
+        password: this.password
+      };
+      axios
+        .get("http://localhost:3000/register", loginValues)
+        .then(response => {
+          this.data = response.data;
+          this.data.forEach(user => {
+            if (this.email != "" && this.password != "") {
+              if (user.email == this.email && user.password == this.password) {
+                this.$router.replace({ name: "Bookshelf" });
+                console.log(user);
+              } else {
+                console.log("The username and / or password is incorrect");
+              }
+            } else {
+              this.errors.push("A username and password must be present.");
+            }
+            e.preventDefault();
+          });
+        })
+        .catch(function(e) {
+          console.log(e);
+        });
+    } -->
