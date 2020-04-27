@@ -24,14 +24,13 @@ export default new Router({
       path: "/bookshelf",
       name: "Bookshelf",
       component: Bookshelf,
-      meta: {
-        requiresAuth: true
-      }
+      props: true
     },
     {
       path: "/booksearch",
       name: "BookSearch",
-      component: BookSearch
+      component: BookSearch,
+      props: true
     },
     {
       path: "/bookinfo",
