@@ -6,7 +6,6 @@ import router from './router'
 import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all.js";
 
-Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
