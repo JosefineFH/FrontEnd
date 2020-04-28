@@ -56,6 +56,7 @@ export const actions = {
         dispatch('notification/add', notification, { root: true })
       })
   },
+
   fetchEvent({ commit, dispatch, getters }, id) {
     //Send in the getters
 
@@ -64,11 +65,13 @@ export const actions = {
     if (event) {
       // if we do, set the event
       commit('SET_EVENT', event)
+      return event //added return 
     } else {
       //if no, get it with the api
-      EventService.getEvent(id)
+      return EventService.getEvent(id)
         .then(response => {
           commit('SET_EVENT', response.data)
+          return response.data
         })
         .catch(error => {
           const notification = {
