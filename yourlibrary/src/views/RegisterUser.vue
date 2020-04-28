@@ -11,7 +11,17 @@
       <i class="fas fa-unlock icon"></i>
       <input class="input-field" v-model="register.password" type="password" placeholder="Password" />
 
+      <i class="fas fa-unlock icon"></i>
+      <input
+        class="input-field"
+        v-model="register.password2"
+        type="password"
+        placeholder="Password"
+      />
+
       <input class="button" type="submit" name="button" />
+      <br>
+    
     </form>
   </div>
 </template>
