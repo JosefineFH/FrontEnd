@@ -24,41 +24,12 @@ export default {
       register: {
         username: "",
         email: "",
-        password: ""
-      }
     };
   },
   methods: {
     userRegister() {
-      axios
-        .post("http://localhost:3000/users", this.register)
-        .then(response => {
-          console.log("Your register data", response);
-          // let token = response.data.token;
-        });
     }
   }
-
-  // methods: {
-  //   userRegister() {
-  //     // if input is emty cont send form... update form.
-
-  //     const userParams = {
-  //       username: this.register.username,
-  //       email: this.register.email,
-  //       password: this.register.password
-  //     };
-
-  //     axios
-  //       .post("http://localhost:3000/users", userParams)
-  //       .then(() => {
-  //         this.$router.push({ name: "LoginUser" });
-  //       })
-  //       .catch(function(e) {
-  //         console.log(e);
-  //       });
-  //   }
-  // }
 };
 </script>
 
@@ -67,7 +38,6 @@ export default {
   display: grid;
   grid-template-areas:
     "icon input-field "
-    "button button";
   grid-gap: 10px;
   padding-top: 15%;
   justify-content: center;
@@ -87,10 +57,7 @@ input {
 }
 
 .button {
-  column-fill: balance;
   border: none;
-  width: 100px;
-  padding: 5px;
   border-radius: 4px;
   color: white;
   background-image: linear-gradient(to bottom right, #ff6cab, #7366ff);
