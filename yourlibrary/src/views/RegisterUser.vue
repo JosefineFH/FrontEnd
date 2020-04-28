@@ -23,6 +23,9 @@
       <br>
     
     </form>
+
+<p v-if="hide" class="notification">{{this.notification}}</p>
+
   </div>
 </template>
 
