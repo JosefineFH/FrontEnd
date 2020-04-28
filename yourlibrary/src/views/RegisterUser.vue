@@ -31,16 +31,38 @@
 
 <script>
 import axios from "axios";
+
 export default {
   data() {
     return {
       register: {
         username: "",
         email: "",
+        password: "",
+        password2: ""
+      },
+      notification: [],
+      hide: false
     };
   },
   methods: {
     userRegister() {
+      const userInfo = this.register;
+      
+      if ((userInfo.username, userInfo.email, userInfo.password, userInfo.password2 === "")) {
+        console.log("info missing");
+        this.hide = true
+        this.notification = 'User info missing'
+      } else {
+        if (userInfo.password === userInfo.password2) {
+          axios
+            .post("http://localhost:3000/register", userInfo)
+            .then(response => {
+              console.log("Your register data", response.data.email);
+            });
+          console.log("Register is done");
+        }
+      }
     }
   }
 };
