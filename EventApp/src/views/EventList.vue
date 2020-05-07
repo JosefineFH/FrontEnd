@@ -26,26 +26,43 @@
 <script>
 import EventCard from '@/components/EventCard.vue'
 import { mapState } from 'vuex'
+import store from '@/store/store'
 
+// Moved the current page & action call outside the component
+function getPageEvents(routeTo, next) {
+  const currentPage = parseInt(routeTo.query.page) || 1
+  store
+    .dispatch('event/fetchEvents', {
+      page: currentPage
+    })
+    .then(() => {
+      //current page gets passed in as a prop
+      routeTo.params.page = currentPage
+      next()
+    })
+}
 export default {
+  props: {
+    page: {
+      type: Number,
+      required: true
+    }
+  },
+
   components: {
     EventCard
   },
-  created() {
-    this.perPage = 3 // Setting perPage here and not in data means it won't be reactive.
-    // We don't need it to be reactive, and this way our component has access to it.
+  beforeRouteEnter(routeTo, reouterFrom, next) {
+    getPageEvents(routeTo, next)
+  },
 
-    this.$store.dispatch('event/fetchEvents', {
-      perPage: this.perPage,
-      page: this.page
-    })
+  //repit the same code as in beforeRouteEnter. Make a function.
+  beforeRouteUpdate(routeTo, routeFrom, next) {
+    getPageEvents(routeTo, next)
   },
   computed: {
-    page() {
-      return parseInt(this.$route.query.page) || 1
-    },
     hasNextPage() {
-      return this.event.eventsTotal > this.page * this.perPage
+      return this.event.eventsTotal > this.page * this.event.perPage
     },
     ...mapState(['event', 'user'])
   }
