@@ -69,8 +69,8 @@ export default {
     }
   },
   methods: {
-    createEvent() { //Start progress bar
-
+    createEvent() {
+      //Start progress bar
       NProgress.start()
       this.$store
         .dispatch('event/createEvent', this.event)
@@ -79,13 +79,13 @@ export default {
             name: 'event-show',
             params: { id: this.event.id }
           })
-          this.event = this.createFreshEvent()
+          this.event = this.createFreshEventObject()
         })
         .catch(() => {
           NProgress.done() //stops progress bar when error
         })
     },
-    createFreshEvent() {
+    createFreshEventObject() {
       const user = this.$store.state.user.user
       const id = Math.floor(Math.random() * 1000)
       return {
