@@ -36,7 +36,7 @@ function getPageEvents(routeTo, next) {
       page: currentPage
     })
     .then(() => {
-      //current page gets passed in as a prop
+      //current page gets passed in as a prop, so we can print next page
       routeTo.params.page = currentPage
       next()
     })
@@ -53,11 +53,13 @@ export default {
     EventCard
   },
   beforeRouteEnter(routeTo, reouterFrom, next) {
+    //before we enter the route
     getPageEvents(routeTo, next)
   },
 
   //repit the same code as in beforeRouteEnter. Make a function.
   beforeRouteUpdate(routeTo, routeFrom, next) {
+    //before we update the route.
     getPageEvents(routeTo, next)
   },
   computed: {
