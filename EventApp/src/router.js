@@ -25,10 +25,13 @@ const router = new Router({
       props: true,
       beforeEnter(routeTo, routeFrom, next) {
         // before this route is loaded
-        store.dispatch('event/fetchEvent', routeTo.params.id).then(event => {
-          routeTo.params.event = event // <--- Set the event we retrieved
-          next()
-        })
+        store
+          .dispatch('event/fetchEvent', routeTo.params.id)
+          .then(event => {
+            routeTo.params.event = event // <--- Set the event we retrieved
+            next()
+          })
+          .catch(() => next({ name: '404', params: { resource: 'event' } }))
       }
     },
     {
@@ -39,12 +42,13 @@ const router = new Router({
     {
       path: '/404',
       name: '404',
-      component: NotFound
+      component: NotFound,
+      prop: true // we can receive the param as a prop
     },
     {
       //The new catch call router
       path: '*',
-      redirect: { name: '404' }
+      redirect: { name: '404', params: { resource: 'page' } }
     }
   ]
 })
