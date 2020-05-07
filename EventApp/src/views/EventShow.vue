@@ -59,7 +59,7 @@ export default {
   // created() {
   //   this.fetchEvent(this.id)
   // },
- 
+
   // methods: mapActions('event', ['fetchEvent'])
 }
 </script>
