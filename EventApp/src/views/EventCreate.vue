@@ -79,13 +79,13 @@ export default {
             name: 'event-show',
             params: { id: this.event.id }
           })
-          this.event = this.createFreshEventObject()
+          this.event = this.createFreshEvent()
         })
         .catch(() => {
           NProgress.done() //stops progress bar when error
         })
     },
-    createFreshEventObject() {
+    createFreshEvent() {
       const user = this.$store.state.user.user
       const id = Math.floor(Math.random() * 1000)
       return {
