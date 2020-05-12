@@ -5,7 +5,7 @@ import EventShow from './views/EventShow.vue'
 import EventCreate from './views/EventCreate'
 import NProgress from 'nprogress'
 import store from '@/store/store'
-import NotFound from './views/NotFound'
+import NotFound from './views/NotFound.vue'
 
 Vue.use(Router)
 
