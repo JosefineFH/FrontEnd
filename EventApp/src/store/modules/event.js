@@ -8,6 +8,7 @@ export const state = {
   event: {},
   perPage: 3
 }
+
 export const mutations = {
   ADD_EVENT(state, event) {
     state.events.push(event)
@@ -23,10 +24,11 @@ export const mutations = {
   }
 }
 export const actions = {
-  createEvent({ commit, dispatch }, event) {
+ createEvent({ commit, dispatch }, event) {
     return EventService.postEvent(event)
       .then(() => {
         commit('ADD_EVENT', event)
+        commit('SET_EVENT', event)
         const notification = {
           type: 'success',
           message: 'Your event has been created!'
@@ -36,7 +38,7 @@ export const actions = {
       .catch(error => {
         const notification = {
           type: 'error',
-          message: 'Ther was a problem creating your event: ' + error.message
+          message: 'There was a problem creating your event: ' + error.message
         }
         dispatch('notification/add', notification, { root: true })
         throw error
@@ -44,7 +46,7 @@ export const actions = {
   },
 
   fetchEvents({ commit, dispatch, state }, { page }) {
-    EventService.getEvents(state.perPage, page)
+    return EventService.getEvents(state.perPage, page)
       .then(response => {
         commit('SET_EVENTS_TOTAL', parseInt(response.headers['x-total-count']))
         commit('SET_EVENTS', response.data)
@@ -58,29 +60,21 @@ export const actions = {
       })
   },
 
-  fetchEvent({ commit, dispatch, getters }, id) {
-    //Send in the getters
+   fetchEvent({ commit, getters, state }, id) {
+    if (id == state.event.id) {
+      return state.event
+    }
 
-    var event = getters.getEventById(id) // See if we already have this event
+    var event = getters.getEventById(id)
 
     if (event) {
-      // if we do, set the event
       commit('SET_EVENT', event)
-      return event // <--- added return
+      return event
     } else {
-      //if no, get it with the api
-      return EventService.getEvent(id)
-        .then(response => {
-          commit('SET_EVENT', response.data)
-          return response.data // <--- added a return here
-        })
-        .catch(error => {
-          const notification = {
-            type: 'error',
-            message: 'There was a problem fetching event: ' + error.message
-          }
-          dispatch('notification/add', notification, { root: true })
-        })
+      return EventService.getEvent(id).then(response => {
+        commit('SET_EVENT', response.data)
+        return response.data
+      })
     }
   }
 }
