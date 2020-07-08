@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Author</title>
+  </head>
+  <body onload="getAboutAuthor()">
+    <main class="container">
+      <div id="output"></div>
+      <div id="output2"></div>
+    </main>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="scripts.js"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400&family=Raleway:wght@300&display=swap");
+
+    .profileImg {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 100%;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      overflow: auto;
+      padding: 0 2rm;
+      font-family: "Raleway", sans-serif;
+    }
+
+    .container h1 {
+      text-align: center;
+    }
+
+    .card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 2rem;
+      background: #f1f1f1;
+      margin-bottom: 2rem;
+    }
+
+    .card img {
+      height: 350px;
+      margin: auto;
+      overflow: auto;
+      padding: 30px;
+    }
+    .card > div {
+      padding: 2rem;
+    }
+
+    .card:nth-child(even) img {
+      order: 2;
+    }
+
+    .card h1 {
+      text-align: center;
+
+      margin-bottom: 2rem;
+      font-family: "Raleway", sans-serif;
+    }
+
+    .card p {
+      margin: 2rem 0 2rem 0;
+      font-size: 16px;
+      font-family: "Nanum Gothic", sans-serif;
+    }
+  </style>
+</html>

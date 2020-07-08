@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400&family=Raleway:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    overflow: auto;
+    padding: 0 2rm;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+    background: #f1f1f1;
+    margin-bottom: 2rem;
+  }
+
+  .card h2, h1 {
+    margin-bottom: 2rem;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .card p {
+    font-size: 16px;
+    font-family: 'Nanum Gothic', sans-serif;
+  }
+
+  .card span {
+    color: #b50d10;
+  }
+
+  .card img {
+    height: 350px;
+    margin: auto;
+    overflow: auto;
+    padding: 30px ;
+  }
+
+  .card > div {
+    padding: 2rem;
+  }
+
+  .card:nth-child(even) img {
+    order: 2;
+  }

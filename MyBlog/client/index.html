@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/menu.css">
+
+
+    <title>Posts</title>
+  </head>
+  <body onload="getPosts()">
+    <main>
+      <div class="header" id="categoryList"></div>
+      <div class="container" id="output"></div>
+    </main>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="scripts.js"></script>
+  <style>
+      .main-header {
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rm;
+}
+
+.main-header h1 {
+    font-size: 4rm;
+    margin-bottom: 2rm;
+    line-height: 1.2;
+}
+
+.main-header p {
+    font-size: 16px;
+}
+  </style>
+</html>
