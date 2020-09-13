@@ -5,13 +5,9 @@
 
 Using AOS (Animate on Scroll) Library for a fading effect when you are scrolling.
 
-___
-
 ## World Event App
 ### [Code](https://github.com/JosefineFM/FrontEnd/tree/master/EventApp)
 Frammework Vue.js and json-server as backend.
-
-___
 
 ## My Blog
 ### [Code: FrontEnd](https://github.com/JosefineFM/FrontEnd/tree/master/MyBlog/client)
@@ -19,8 +15,8 @@ ___
 ### There is a finished sql file in the project.
 ### Tech use HTML, CS, JavaScript, PHP and PHPMyAdmin
 
-## CSS
-
+___
+## Small Projects
 ### [Grid Layout With Span](https://github.com/JosefineFM/FrontEnd/tree/master/css/cssGridLayou) - css + html
 
 ### [Full Screen Video](https://github.com/JosefineFM/FrontEnd/tree/master/css/FullScreenVideoBackgound) - css + html. 
