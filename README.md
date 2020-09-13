@@ -21,10 +21,11 @@ ___
 
 ## CSS
 
-[Grid Layout With Span](https://github.com/JosefineFM/FrontEndSandBox/tree/master/css/cssGridLayou) - css + html
+### [Grid Layout With Span](https://github.com/JosefineFM/FrontEnd/tree/master/css/cssGridLayou) - css + html
 
-[Full Screen Video](https://github.com/JosefineFM/FrontEndSandBox/tree/master/css/FullScreenVideoBackgound) - css + html. 
+### [Full Screen Video](https://github.com/JosefineFM/FrontEnd/tree/master/css/FullScreenVideoBackgound) - css + html. 
 How to get video on a whole section. 
 
-[Animate on scroll demo](http://dirty-story.surge.sh/) - Vue.js + css
+### [Animate on scroll demo](http://dirty-story.surge.sh/)- Vue.js + css
+### [Code](https://github.com/JosefineFM/FrontEnd/tree/master/css/AnimateOnScrollWebpage)
 Using AOS (Animate on Scroll) Library for a fading effect when you are scrolling.
