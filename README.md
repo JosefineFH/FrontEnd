@@ -18,3 +18,13 @@ ___
 ### The backend is in folder [API,](https://github.com/JosefineFM/FrontEnd/tree/master/MyBlog/api/post) [Config,](https://github.com/JosefineFM/FrontEnd/tree/master/MyBlog/config) [models](https://github.com/JosefineFM/FrontEnd/tree/master/MyBlog/models)
 ### There is a finished sql file in the project.
 ### Tech use HTML, CS, JavaScript, PHP and PHPMyAdmin
+
+## CSS
+
+[Grid Layout With Span](https://github.com/JosefineFM/FrontEndSandBox/tree/master/css/cssGridLayou) - css + html
+
+[Full Screen Video](https://github.com/JosefineFM/FrontEndSandBox/tree/master/css/FullScreenVideoBackgound) - css + html. 
+How to get video on a whole section. 
+
+[Animate on scroll demo](http://dirty-story.surge.sh/) - Vue.js + css
+Using AOS (Animate on Scroll) Library for a fading effect when you are scrolling.
