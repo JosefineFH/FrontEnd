@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title> Document</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo" id="topLogo"> 
+            <a href="#"> The Witcher</a> 
+        </div>
+        
+        <div class="topnav" id="topNavBar">
+            <a href="javascript:void(0);" class="icon" onclick="responsiveTopMenu()">
+                <i class="fa fa-bars"></i>
+              </a>
+            <a href="#Novigrad"> Novigrad </a> 
+            <a href="#Toussaint"> Toussaint </a> 
+            <a href="#kaerMorhen"> Kaer Morhen</a>
+
+        </div>
+    </nav>
+    <main>
+        <section class="section-1" id="novigrad">
+            <div class="grid-box-1">
+                <h1> Novigrad </h1>
+                <p> Is a free city within Redania and is therefore not subject to the rule of that kingdom. It is one of
+                    the major ports on the continent and populated by nearly 30, 0 inhabitants, making it one of the
+                    largest cities in the North</p>
+                <a href="https://witcher.fandom.com/wiki/Novigrad">Read more</a>
+            </div>
+            <div class="grid-box-2"></div>
+        </section>
+        <section class="section-2" id="Toussaint">
+            <div class="grid-box-1">
+                <h1> Toussaint </h1>
+                <p>Is a small autonomous duchy under the banner of the Empire of Nilfgaard, famous for its wines,
+                    enabled by the region's volcanic soil and ideal combination of sunny and rainy days.</p>
+                <a href="https://witcher.fandom.com/wiki/Toussaint">Read more</a>
+            </div>
+            <div class="grid-box-2"></div>
+        </section>
+        <section class="section-3" id="kaerMorhen">
+            <div class="grid-box-1">
+                <h1>Kaer Morhen</h1>
+                <p>Is an old keep where witchers of the School of the Wolf used to be trained. The name is a corruption
+                    of Caer a'Muirehen, revealing that there used to be sea around it, which is further indicated by the
+                    presence of fossilized sea creatures embedded in the stones on which it was built.</p>
+                <a href="https://witcher.fandom.com/wiki/Kaer_Morhen">Read more</a>
+            </div>
+            <div class="grid-box-2"></div>
+        </section>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    </main>
+    <footer>
+        <p>Copyright 
+            <img src="images/icons8-copyright-64.png"/>
+            2020 Holth Development</p>
+    </footer>
+</body>
+<script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+    // When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+
+responsiveTopMenu = () => {
+    const topMenu = document.getElementById("topNavBar");
+    const topLogo = document.getElementById("topLogo");
+
+    if (topMenu.className === "topnav") {
+        topMenu.className += " responsive";
+    } else {
+        topMenu.className = "topnav";
+    }
+}
+
+</script>
+
+</html>
